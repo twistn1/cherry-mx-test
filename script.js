@@ -2,6 +2,7 @@
 let tabs = document.querySelectorAll('.tabs'),
     blocks = document.querySelectorAll('.tabs_content');
 
+let sound = 0;
 // tabs
 
 tabs.forEach((tab, index) => {
@@ -10,10 +11,32 @@ tabs.forEach((tab, index) => {
             content.classList.remove('is-active');
         });
         blocks[index].classList.add('is-active');
+        sound = index;
     });
 });
 
 
+window.addEventListener('keydown', () => {
+    switch (sound) {
+        case 0:
+            document.getElementById('blue_press').play();
+            break;
+        case 1:
+            console.log('red');
+            break;
+    }
+});
+window.addEventListener('keyup', () => {
+    switch (sound) {
+        case 0:
+            document.getElementById('blue_up').play();
+            break;
+        case 1:
+            console.log('red_up');
+            break;
+    }
+
+});
 
 
 
@@ -24,7 +47,6 @@ let spaceKey = document.querySelector('.space_key');
 let shift_left = document.querySelector('.shift_left');
 let shift_right = document.querySelector('.shift_right');
 let caps_lock_key = document.querySelector('.caps_lock_key');
-
 
 for(let i = 0; i < keys.length; i++) {
     keys[i].setAttribute('keyname', keys[i].innerText);
@@ -51,7 +73,7 @@ window.addEventListener('keydown', function(e) {
     }
 })
 
-window.addEventListener('keyup', function(e) {
+window.addEventListener('keyup',function(e) {
     for(let i = 0; i < keys.length; i++) {
         if(e.key == keys[i].getAttribute('keyname' ) || e.key == keys[i].getAttribute('lowerCaseName')) {
             keys[i].classList.remove('active')
@@ -71,7 +93,7 @@ window.addEventListener('keyup', function(e) {
         }
         setTimeout(()=> {
             keys[i].classList.remove('remove')
-        },200)
+        }, 100)
     }
 })
 

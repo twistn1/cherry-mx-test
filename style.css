@@ -234,7 +234,6 @@ body{
 
 body {
     font-family: 'Lato', sans-serif;
-    transition: .2s;
 }
 
 .keyboard_wrapp {
@@ -265,7 +264,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 4px;
-    transition: .2s;
+    transition: 0s;
     z-index: 5;
 }
 
@@ -308,7 +307,6 @@ body {
     font-size: 26px;
     background-color: #f7f7f7;
     padding-left: 10px;
-    transition: .2s;
 }
 
 .keys.active {
@@ -343,7 +341,6 @@ body.active {
     margin: 0 5px;
     position: absolute;
     left: 0;
-    transition: .2s;
 }
 
 .toggle_circle.active {
