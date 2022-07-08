@@ -16,20 +16,22 @@ tabs.forEach((tab, index) => {
 });
 
 
-window.addEventListener('keydown', () => {
+window.addEventListener('keydown', function (event) {
+    if(event.repeat) return false;
     switch (sound) {
         case 0:
-            document.getElementById('blue_press').play();
+            document.getElementById('blue_press').play()
             break;
         case 1:
             console.log('red');
             break;
     }
 });
-window.addEventListener('keyup', () => {
+window.addEventListener('keyup', (e) => {
     switch (sound) {
         case 0:
             document.getElementById('blue_up').play();
+            e.repeat = false;
             break;
         case 1:
             console.log('red_up');
@@ -93,7 +95,7 @@ window.addEventListener('keyup',function(e) {
         }
         setTimeout(()=> {
             keys[i].classList.remove('remove')
-        }, 100)
+        }, 300)
     }
 })
 
